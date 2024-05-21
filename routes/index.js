@@ -8,6 +8,7 @@ router.get("/", (req, res) => {
   }else{
     global.baseurl = `https://${hostname}`;
   }
+  console.log("Rander");
   res.render("index");
 });
 
