@@ -5,7 +5,8 @@ const app = express();
 app.use(expressLayouts); 
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views',);
-app.use(express.static("public"));
+const path = require('node:path')
+app.use(express.static(path.join(__dirname + '/public')));
 const port = process.env.PORT || 3000;
 global.port = port;
 app.use("/", require("./routes/index"));
